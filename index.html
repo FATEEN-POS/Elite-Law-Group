@@ -3,556 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hossny & Co - مكتب المحاماة والاستشارات القانونية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Hossny Law Firm | الفخامة والقانون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- المتغيرات والتنسيق العام (Fustification) --- */
         :root {
-            --primary-dark: #111111; /* أسود ملكي */
-            --secondary-dark: #1a1a1a; /* رمادي غامق جدا خلفيات */
-            --gold: #C5A059; /* ذهبي نحاسي - نفس لون موقع حسني */
-            --light-bg: #f9f9f9; /* خلفية فاتحة */
-            --text-dark: #333333;
-            --text-light: #ffffff;
-            --font-serif: 'Amiri', serif;
-            --font-sans: 'Cairo', sans-serif;
-            --transition: all 0.3s ease;
+            --black-royal: #0a0a0a;
+            --black-soft: #141414;
+            --gold-primary: #c5a059;
+            --gold-bright: #e6b85a;
+            --white: #ffffff;
+            --gray-text: #b0b0b0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: var(--font-sans);
-            color: var(--text-dark);
-            line-height: 1.8;
+            background-color: var(--black-royal);
+            color: var(--white);
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.7;
             overflow-x: hidden;
-            background-color: var(--light-bg);
         }
 
-        h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 700;
-        }
+        h1, h2, h3, .serif { font-family: 'Amiri', serif; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        /* --- العناوين الرئيسية للأقسام --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--gold);
-            margin: 15px auto 0;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-dark);
-            opacity: 0.8;
-            max-width: 600px;
-            margin: 0 auto 50px;
-            font-weight: 400;
-        }
-
-        /* --- الأزرار --- */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: var(--font-sans);
-            font-size: 1rem;
-        }
-
-        .btn-gold {
-            background-color: var(--gold);
-            color: var(--text-light);
-            border: 2px solid var(--gold);
-        }
-
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--gold);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--text-light);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--text-light);
-            color: var(--primary-dark);
-        }
-
-        /* =========================================
-           --- Section 1: Header & Nav ---
-        ========================================= */
+        /* --- Header --- */
         header {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 2px solid var(--gold);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .header-container {
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
         }
 
-        .logo img {
-            max-height: 60px; /* ضبط حجم اللوجو */
-            width: auto;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 25px;
+        .logo-box img {
+            height: 70px;
+            filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.5));
         }
 
         nav a {
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: 400;
+            transition: 0.3s;
+            font-size: 1.1rem;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--gold);
-        }
+        nav a:hover { color: var(--gold-primary); }
 
-        /* =========================================
-           --- Section 2: Hero Section ---
-        ========================================= */
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-                              url('Screenshot 2026-03-25 103733.jpg'); /* صورة المطرقة خلفية */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* تأثير Parallax للفخامة */
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            color: var(--text-light);
-            margin-top: 80px; /* بسبب الهيدر الثابت */
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                        url('data:image/jpeg;base64,'); /* سيتم دمج الصور في النسخة النهائية بالأسفل */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 3px solid var(--gold-primary);
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
+            color: var(--gold-primary);
             margin-bottom: 20px;
-            line-height: 1.2;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
         .hero-content p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        /* =========================================
-           --- Section 3: من نحن (About) ---
-        ========================================= */
-        .about {
-            background-color: var(--text-light);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            color: var(--gold);
             font-size: 1.5rem;
-            margin-bottom: 10px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--gray-text);
         }
 
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        /* --- Section Styling --- */
+        section { padding: 100px 10%; }
+        .title-gold {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--gold-primary);
+            margin-bottom: 60px;
+        }
+        .title-gold::after {
+            content: ""; display: block; width: 100px; height: 2px;
+            background: var(--gold-primary); margin: 15px auto;
         }
 
-        .about-img img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            border: 5px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* =========================================
-           --- Section 4: لماذا نحن (Why Us) ---
-        ========================================= */
-        .why-us {
-            background-color: var(--secondary-dark);
-            color: var(--text-light);
-        }
-
-        .why-us .section-title {
-            color: var(--text-light);
-        }
-
+        /* --- Why Us (لماذا نحن) --- */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-
         .why-card {
-            background-color: #222;
+            background: var(--black-soft);
             padding: 40px;
-            border-radius: 5px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
             text-align: center;
-            border-bottom: 3px solid transparent;
-            transition: var(--transition);
+            transition: 0.4s;
         }
-
         .why-card:hover {
-            border-bottom: 3px solid var(--gold);
-            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
         }
+        .why-card i { font-size: 3rem; color: var(--gold-primary); margin-bottom: 20px; display: block; }
+        .why-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
 
-        .why-card .icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            display: block;
+        /* --- Testimonials (موكليننا) --- */
+        .testimonials { background-color: var(--black-soft); }
+        .test-box {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
         }
-
-        .why-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        /* =========================================
-           --- Section 5: ماذا يقول موكليننا (Testimonials) ---
-        ========================================= */
-        .testimonials {
-            background-color: var(--light-bg);
-        }
-
-        .test-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
         .test-card {
-            background-color: var(--text-light);
+            min-width: 350px;
+            background: var(--black-royal);
             padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            position: relative;
+            border-right: 4px solid var(--gold-primary);
         }
+        .test-card p { font-style: italic; color: var(--gray-text); margin-bottom: 20px; }
+        .test-card h4 { color: var(--gold-primary); }
 
-        .test-card .quote-icon {
-            color: var(--gold);
-            font-size: 3rem;
-            opacity: 0.3;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .test-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .test-meta h4 {
-            font-size: 1.2rem;
-            color: var(--primary-dark);
-        }
-
-        .test-meta span {
-            color: var(--text-dark);
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* =========================================
-           --- Section 6: احجز استشارتك (Booking) ---
-        ========================================= */
-        .booking {
-            background-image: linear-gradient(rgba(17,17,17,0.85), rgba(17,17,17,0.95)), 
-                              url('Screenshot 2026-03-25 103803.jpg'); /* صورة المصافحة خلفية */
+        /* --- Call to Action (احجز استشارتك) --- */
+        .cta {
+            text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)),
+                        url('data:image/jpeg;base64,...'); /* صورة المصافحة */
             background-size: cover;
-            background-position: center;
-            color: var(--text-light);
-            text-align: center;
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
+            padding: 120px 10%;
+            border-top: 1px solid var(--gold-primary);
         }
-
-        .booking .section-title {
-            color: var(--text-light);
+        .btn-gold {
+            background: var(--gold-primary);
+            color: var(--black-royal);
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 2px;
         }
+        .btn-gold:hover { background: var(--gold-bright); transform: scale(1.05); }
 
-        .booking .section-subtitle {
-            color: var(--text-light);
-            opacity: 0.9;
-        }
-
-        /* =========================================
-           --- Section 7: Footer ---
-        ========================================= */
+        /* --- Footer --- */
         footer {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            padding: 50px 0 20px;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo img {
-            max-height: 80px;
-            margin-bottom: 15px;
-        }
-
-        .footer-about p {
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-
-        .footer-links h3, .footer-contact h3 {
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-family: var(--font-sans);
-            font-weight: 700;
-        }
-
-        .footer-links ul li, .footer-contact ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-            padding-right: 5px;
-        }
-
-        .copyright {
+            padding: 60px 10%;
+            background: #050505;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            opacity: 0.6;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
         }
-
-        /* =========================================
-           --- Responsive Design ---
-        ========================================= */
-        @media (max-width: 992px) {
-            .hero-content h1 { font-size: 2.8rem; }
-            .why-grid, .test-grid { grid-template-columns: 1fr 1fr; }
-            .about-grid { grid-template-columns: 1fr; text-align: center; }
-            .about-img img { max-width: 500px; margin: 0 auto; }
-        }
-
+        .footer-logo img { height: 60px; margin-bottom: 20px; opacity: 0.8; }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .section-title { font-size: 2rem; }
-            .why-grid, .test-grid { grid-template-columns: 1fr; }
-            nav ul { display: none; } /* لإضافة قائمة همبرجر برمجياً لاحقاً */
-            .hero-btns { flex-direction: column; gap: 10px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .why-grid { grid-template-columns: 1fr; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <a href="#"><img src="image_7df47a.png" alt="Hossny & Co Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">الرئيسية</a></li>
-                    <li><a href="#">من نحن</a></li>
-                    <li><a href="#">الخدمات</a></li>
-                    <li><a href="#">المدونة</a></li>
-                    <li><a href="#">اتصل بنا</a></li>
-                </ul>
-            </nav>
-            <div class="header-action">
-                <a href="#" class="btn btn-gold btn-sm">استشارة فورية</a>
-            </div>
+        <div class="logo-box">
+            <img src="data:image/png;base64,[[BASE64_LOGO]]" alt="اللوجو">
         </div>
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#about">لماذا نحن</a>
+            <a href="#clients">الموكلين</a>
+            <a href="#book">احجز استشارتك</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Hossny & Co<br>خبرة قانونية تصنع الفارق</h1>
-            <p>نحن هنا لتقديم استشارات قانونية متخصصة ودفاع فعال يحمي حقوقكم ويحقق أهدافكم، بأعلى درجات الاحترافية والسرية.</p>
-            <div class="hero-btns">
-                <a href="#" class="btn btn-gold">احجز استشارة</a>
-                <a href="#" class="btn btn-outline">تعرف على خدماتنا</a>
+    <section class="hero" id="home" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('data:image/jpeg;base64,[[BASE64_HAMMER]]');">
+        <div class="hero-content">
+            <h1>Hossny Law Firm</h1>
+            <p>الهيبة القانونية .. والخبرة التي تليق بكم</p>
+            <button class="btn-gold">اطلب استشارة رسمية الآن</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="title-gold">لماذا تختارنا؟</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <i>⚖️</i>
+                <h3>خبرة سيادية</h3>
+                <p>إدارة قانونية تعتمد على الانضباط والخبرة العميقة في التعامل مع أعقد القضايا.</p>
+            </div>
+            <div class="why-card">
+                <i>🛡️</i>
+                <h3>حماية كاملة</h3>
+                <p>نضمن لموكلينا أعلى درجات السرية والحماية القانونية المطلقة.</p>
+            </div>
+            <div class="why-card">
+                <i>⭐</i>
+                <h3>نتائج حاسمة</h3>
+                <p>لا نكتفي بالدفاع، بل نصنع المسارات القانونية التي تضمن النجاح.</p>
             </div>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container about-grid">
-            <div class="about-text">
-                <h3>عن المؤسسة</h3>
-                <h2>النزاهة، الخبرة، والكفاءة</h2>
-                <p>مؤسسة Hossny & Co هي مؤسسة قانونية رائدة تتمتع بسجل حافل من النجاح في تمثيل العملاء أمام كافة المحاكم والجهات الهيئات القضائية.</p>
-                <p>نتميز بفريق من المستشارين ذوي الخبرة الطويلة في مختلف مجالات القانون.</p>
-                <a href="#" class="btn btn-gold">اقرأ المزيد</a>
+    <section class="testimonials" id="clients">
+        <h2 class="title-gold">ماذا يقول عنا موكليننا</h2>
+        <div class="test-box">
+            <div class="test-card">
+                <p>"التعامل مع التيم يعطيك شعوراً بالأمان والاحترافية العالية. الهيبة والاتقان هما عنوان هذا الصرح."</p>
+                <h4>اللواء / أ.ح. محمد علي</h4>
             </div>
-            <div class="about-img">
-                <img src="Screenshot 2026-03-25 103655.jpg" alt="فريق عمل Hossny & Co">
+            <div class="test-card">
+                <p>"دقة في المواعيد ونتائج مبهرة في قضايا الشركات المعقدة. شكراً لفريق العمل."</p>
+                <h4>م. إبراهيم محمود</h4>
             </div>
-        </div>
-    </section>
-
-    <section class="why-us">
-        <div class="container">
-            <h2 class="section-title">لماذا Hossny & Co؟</h2>
-            <p class="section-subtitle">نضع معايير جديدة للتميز القانوني لخدمتكم</p>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="icon">⚖️</div> <h3>خبرة عميقة</h3>
-                    <p>فريقنا يضم نخبة من المستشارين بخبرات تمتد لعقود في قضايا معقدة.</p>
-                </div>
-                <div class="why-card">
-                    <div class="icon">🤝</div> <h3>التزام مطلق بالنزاهة</h3>
-                    <p>نعمل بفرض أعلى معايير الأخلاق المهنية والسرية التامة لعملائنا.</p>
-                </div>
-                <div class="why-card">
-                    <div class="icon">📊</div> <h3>نتائج مثبتة</h3>
-                    <p>لدينا تاريخ حافل من النجاحات وتحقيق أفضل النتائج لموكلينا.</p>
-                </div>
+            <div class="test-card">
+                <p>"مكتب يجمع بين الرقي في التعامل والقوة في التنفيذ. فخور بالتعامل معكم."</p>
+                <h4>المستشار / رأفت كمال</h4>
             </div>
         </div>
     </section>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">شهادات نعتز بها</h2>
-            <p class="section-subtitle">ثقة عملائنا هي رأس مالنا الحقيقي</p>
-            <div class="test-grid">
-                <div class="test-card">
-                    <span class="quote-icon">“</span>
-                    <p>تجربة استثنائية، تم التعامل مع قضيتي باحترافية وسرعة منقطعة النظير. أنصح بشدة بالتعامل معهم.</p>
-                    <div class="test-meta">
-                        <h4>أحمد المصطفي</h4>
-                        <span>رجل أعمال</span>
-                    </div>
-                </div>
-                <div class="test-card">
-                    <span class="quote-icon">“</span>
-                    <p>خدمة قانونية راقية، المستشارون كانوا دائمًا متاحين للإجابة على استفساراتي وتقديم النصح الصادق.</p>
-                    <div class="test-meta">
-                        <h4>د. سارة عثمان</h4>
-                        <span>مديرة تنفيذية</span>
-                    </div>
-                </div>
-                <div class="test-card">
-                    <span class="quote-icon">“</span>
-                    <p>الدقة في المواعيد والكفاءة العالية هي ما تميز هذا المكتب. حققوا لي نتيجة لم أكن أتوقعها.</p>
-                    <div class="test-meta">
-                        <h4>م. خالد يوسف</h4>
-                        <span>صاحب شركة</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="booking">
-        <div class="container">
-            <h2 class="section-title">جاهزون للدفاع عن حقوقك</h2>
-            <p class="section-subtitle">لا تتردد في طلب استشارة قانونية تضعك على الطريق الصحيح</p>
-            <a href="#" class="btn btn-gold btn-lg">احجز جلسة استشارة الآن</a>
-        </div>
+    <section class="cta" id="book" style="background-image: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.9)), url('data:image/jpeg;base64,[[BASE64_HANDSHAKE]]');">
+        <h2 class="title-gold" style="color: white;">احجز استشارتك الآن</h2>
+        <p style="margin-bottom: 40px; font-size: 1.2rem;">نحن هنا لنستمع إليك ونقدم لك الحلول القانونية التي تحمي مستقبلك.</p>
+        <button class="btn-gold">تواصل مباشرة مع التيم</button>
     </section>
 
     <footer>
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <div class="footer-logo">
-                    <img src="image_7df47a.png" alt="Hossny & Co Logo">
-                </div>
-                <p>مؤسستنا تلتزم بتقديم الحلول القانونية الأكثر كفاءة وموثوقية.</p>
-                <img src="image_7df49a.png" alt="Scales Icon" style="max-height: 40px; opacity: 0.5;"> </div>
-            <div class="footer-links">
-                <h3>روابط سريعة</h3>
-                <ul>
-                    <li><a href="#">من نحن</a></li>
-                    <li><a href="#">مجالات العمل</a></li>
-                    <li><a href="#">فريق العمل</a></li>
-                    <li><a href="#">اتصل بنا</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>تواصل معنا</h3>
-                <ul>
-                    <li>📍 العنوان: شارع رمسيس، القاهرة</li>
-                    <li>📞 الهاتف: 01012345678</li>
-                    <li>✉️ الإيميل: info@hossny-law.com</li>
-                </ul>
-            </div>
+        <div class="footer-logo">
+             <img src="data:image/png;base64,[[BASE64_LOGO]]" alt="اللوجو">
         </div>
-        <div class="copyright">
-            <p>&copy; 2026 Hossny & Co. جميع الحقوق محفوظة.</p>
+        <p style="color: var(--gray-text);">جميع الحقوق محفوظة &copy; 2026 Hossny & Co. صُمم بوقار ليناسبكم.</p>
+        <div style="margin-top: 20px;">
+             <img src="data:image/png;base64,[[BASE64_SCALES]]" style="height: 30px; opacity: 0.3;">
         </div>
     </footer>
 
