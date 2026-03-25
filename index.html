@@ -3,360 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Legal & Finance | صرح الفخامة القانونية</title>
+    <title>Elite Law Group | الفخامة القانونية</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c9943a;
             --gold-light: #e6b85a;
-            --gold-glitter: #fcf6ba;
             --black-rich: #050505;
             --black-matte: #111111;
             --white: #ffffff;
             --gray: #a0a0a0;
-            --transition: all 0.4s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: var(--black-rich);
-            color: var(--white);
-            font-family: 'Cairo', sans-serif;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--black-rich); color: var(--white); font-family: 'Cairo', sans-serif; line-height: 1.8; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Amiri', serif; }
 
         /* تأثير البريق الذهبي */
         .gold-text {
-            background: linear-gradient(to right, #bf953f, var(--gold-glitter), #b38728, var(--gold-glitter), #aa771c);
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #aa771c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
         }
-
-        .gold-border { border: 1px solid var(--gold); }
-        .gold-bg { background-color: var(--gold); color: var(--black-rich); }
 
         /* --- Header --- */
         header {
             padding: 10px 5%;
             background: rgba(0,0,0,0.95);
             position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            width: 100%; top: 0; z-index: 1000;
             border-bottom: 2px solid var(--gold);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            display: flex; justify-content: space-between; align-items: center;
         }
+        .logo img { height: 65px; }
+        nav a { color: var(--white); text-decoration: none; margin-right: 20px; font-weight: 400; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
 
-        .logo-container img { height: 75px; filter: drop-shadow(0 0 5px rgba(201,148,58,0.3)); }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin-right: 25px;
-            font-weight: 400;
-            transition: var(--transition);
-        }
-
-        nav a:hover, nav a.active { color: var(--gold); text-shadow: 0 0 5px var(--gold); }
-
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
-                        url('data:image/jpeg;base64,'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            border-bottom: 3px solid var(--gold);
+                        url('Screenshot 2026-03-25 103733.jpg'); /* صورة المطرقة والكتب */
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.6rem; color: var(--gold); margin-bottom: 30px; }
 
-        .hero h1 { font-size: 4.5rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .hero p { font-size: 1.5rem; color: #ddd; max-width: 800px; margin-bottom: 30px; }
-        
-        .btn-gold {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--gold), var(--gold-light));
-            color: var(--black-rich);
-            padding: 15px 40px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            border-radius: 2px;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(201,148,58,0.3);
-        }
-        .btn-gold:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 8px 25px rgba(201,148,58,0.5); }
+        /* --- Sections --- */
+        section { padding: 90px 8%; }
+        .section-title { text-align: center; font-size: 3rem; margin-bottom: 50px; }
+        .section-title::after { content: ""; display: block; width: 80px; height: 2px; background: var(--gold); margin: 15px auto; }
 
-        /* --- General Section Styling --- */
-        section { padding: 100px 5%; }
-        .title-gold {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        .title-gold::after {
-            content: ""; display: block; width: 120px; height: 3px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 20px auto;
-        }
+        /* --- Why Us --- */
+        .why-content { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+        .why-text { flex: 1; min-width: 300px; }
+        .why-img { flex: 1; min-width: 300px; }
+        .why-img img { width: 100%; border: 2px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-        /* --- Why Us Section (Add Required) --- */
-        .why-us { background-color: var(--black-matte); }
-        .why-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            align-items: center;
-            justify-content: center;
-        }
-        .why-img { flex: 1; min-width: 300px; max-width: 550px; }
-        .why-img img { width: 100%; border: 4px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .why-text { flex: 1.2; min-width: 300px; }
-        .why-text p { color: var(--gray); margin-bottom: 20px; font-size: 1.1rem; }
+        /* --- Services Grid --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .s-card { background: #151515; padding: 30px; border-top: 3px solid var(--gold); transition: 0.4s; }
+        .s-card:hover { transform: translateY(-10px); background: #1a1a1a; }
+        .s-card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.6rem; }
+        .s-card ul { list-style: none; color: var(--gray); font-size: 0.95rem; }
+        .s-card li::before { content: "✦ "; color: var(--gold); }
 
-        /* --- Detailed Services (Update Required) --- */
-        .services-detailed-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .detailed-card {
-            background: #151515;
-            padding: 40px;
-            border-top: 3px solid transparent;
-            transition: var(--transition);
-            position: relative;
-        }
-        .detailed-card:hover {
-            border-top: 3px solid var(--gold);
-            transform: translateY(-10px);
-            background: #1a1a1a;
-            box-shadow: 0 15px 40px rgba(201,148,58,0.15);
-        }
-        .detailed-card h3 { color: var(--gold); margin-bottom: 20px; font-size: 1.8rem; }
-        .detailed-card ul { list-style: none; color: var(--gray); }
-        .detailed-card ul li { margin-bottom: 10px; position: relative; padding-right: 20px; }
-        .detailed-card ul li::before { content: "✦"; color: var(--gold); position: absolute; right: 0; }
+        /* --- Testimonials (ماذا يقول عملاؤنا) --- */
+        .testimonials { background: var(--black-matte); }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .test-card { padding: 30px; background: var(--black-rich); border: 1px solid #222; position: relative; }
+        .test-card p { font-style: italic; margin-bottom: 15px; color: #ccc; }
+        .test-card h4 { color: var(--gold); }
 
-        /* --- Partners Section (Add Required) --- */
-        .partners { background: #080808; text-align: center; }
-        .partners-logos {
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 60px;
-            margin-top: 40px; opacity: 0.6; grayscale: 1; transition: var(--transition);
-        }
-        .partners-logos:hover { opacity: 1; grayscale: 0; }
-        /* وضع لوجوهات وهمية هنا مثال */
-        .partners-logos span { font-size: 2rem; color: var(--gray); font-weight: bold; }
+        /* --- Partners --- */
+        .partners-box { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.7; }
+        .partners-box img { height: 60px; filter: grayscale(1); transition: 0.3s; }
+        .partners-box img:hover { filter: grayscale(0); opacity: 1; }
 
-        /* --- Contact & Location --- */
-        .contact-section {
-            background-color: var(--black-matte);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+        /* --- CTA --- */
+        .cta {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                        url('Screenshot 2026-03-25 103803.jpg'); /* صورة المصافحة */
+            background-size: cover; background-position: center; text-align: center;
         }
-        .contact-details h3 { color: var(--gold); margin-bottom: 30px; font-size: 2rem; }
-        .contact-item { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; }
-        .contact-item span.icon { color: var(--gold); font-size: 1.5rem; }
-        .contact-item div h5 { font-size: 1.1rem; margin-bottom: 5px; }
-        .contact-item div p { color: var(--gray); font-size: 0.95rem; }
-
-        .location-map { border: 2px solid var(--gold); height: 100%; min-height: 350px; }
-        /* مثال لخريطة وهمية */
-        .map-placeholder {
-            width: 100%; height: 100%; background: #222; 
-            display: flex; align-items: center; justify-content: center; color: var(--gold);
-        }
+        .btn-gold { background: var(--gold); color: #000; padding: 15px 40px; font-weight: bold; text-decoration: none; font-size: 1.2rem; transition: 0.3s; display: inline-block; }
+        .btn-gold:hover { background: var(--gold-light); transform: scale(1.05); }
 
         /* --- Footer --- */
-        footer {
-            padding: 50px 5% 20px;
-            background: #050505;
-            text-align: center;
-            border-top: 1px solid rgba(197, 160, 89, 0.2);
-        }
-        .footer-logo img { height: 60px; margin-bottom: 20px; }
-        
-        /* Mobile Responsive */
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 3rem; }
-            .contact-section { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            header { padding: 10px; }
-            header nav { display: none; }
-            .detailed-card { padding: 25px; }
-        }
+        footer { padding: 50px 8%; background: #080808; border-top: 1px solid #222; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-logo img { height: 60px; margin-bottom: 15px; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } nav { display: none; } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="data:image/png;base64," alt="Elite Logo">
+        <div class="logo">
+            <img src="image_7df47a.png" alt="Elite Law Group Logo">
         </div>
         <nav>
             <a href="#home">الرئيسية</a>
-            <a href="#why">لماذا نحن</a>
+            <a href="#about">من نحن</a>
             <a href="#services">الخدمات</a>
-            <a href="#partners">الشركاء</a>
+            <a href="#testimonials">آراء العملاء</a>
             <a href="#contact">اتصل بنا</a>
         </nav>
-        <a href="tel:01116033380" class="btn-gold" style="padding: 10px 20px; font-size: 1rem;">اتصل الآن</a>
     </header>
 
     <section class="hero" id="home">
-        <h1 class="gold-text">Hossny & Co</h1>
-        <p>مجموعة إيليت للاستشارات القانونية والمالية .. الهيبة والخبرة في خدمتكم</p>
-        <p style="font-size: 1.2rem; color: var(--gold);">At labore aut fugit.</p>
-        <a href="#contact" class="btn-gold">احجز استشارتك الرسمية</a>
+        <p class="serif" style="font-size: 1.8rem; color: #fff;">"وَإِذَا حَكَمْتُم بَيْنَ النَّاسِ أَن تَحْكُمُوا بِالْعَدْلِ"</p>
+        <h1 class="gold-text">Elite Law Group</h1>
+        <p>بقيادة سيادة اللواء / المستشار</p>
+        <a href="#contact" class="btn-gold">حجز استشارة رسمية</a>
     </section>
 
-    <section class="why-us" id="why">
-        <h2 class="title-gold">لماذا مؤسسة إيليت؟</h2>
+    <section id="about">
+        <h2 class="section-title gold-text">لماذا Elite Law Group؟</h2>
         <div class="why-content">
-            <div class="why-img">
-                <img src="data:image/jpeg;base64," alt="فريق العمل">
-            </div>
             <div class="why-text">
-                <h3>قيادة حكيمة .. انضباط عسكري .. كفاءة قانونية</h3>
-                <p>نحن لسنا مجرد مكتب محاماة، نحن كيان مؤسسي يدمج بين الانضباط العسكري في الإدارة، والخبرة القانونية العميقة التي تمتد لعقود. نلتزم بأعلى معايير السرية والنزاهة لحماية مصالح موكلينا.</p>
-                <p>فريقنا يضم نخبة من المستشارين المتخصصين الذين يعملون بتكامل لتقديم أنسب الحلول وأكثرها حسماً.</p>
+                <h3>خبرة سيادية وانضباط مؤسسي</h3>
+                <p>نحن ندمج بين الانضباط العسكري في الإدارة، والخبرة القانونية العميقة لتقديم حلول لا تقبل المساومة. نحن شركاء نجاحكم وحائط صدكم القانوني الأول في مصر والخليج.</p>
+                <p>نلتزم بأعلى معايير السرية المطلقة والنزاهة المهنية في التعامل مع كافة القضايا والمنازعات.</p>
+            </div>
+            <div class="why-img">
+                <img src="Screenshot 2026-03-25 103655.jpg" alt="فريق عمل Elite Law">
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title gold-text">ماذا يقول عنا عملاؤنا</h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <p>"التعامل مع Elite Law Group يعطيك شعوراً بالأمان والاحترافية العالية. الهيبة والاتقان هما عنوان هذا الصرح."</p>
+                <h4>اللواء / أ.ح. محمد علي</h4>
+            </div>
+            <div class="test-card">
+                <p>"دقة في المواعيد ونتائج مبهرة في قضايا الشركات المعقدة. ممتن جداً لسرعة الإنجاز والخبرة الكبيرة."</p>
+                <h4>م. إبراهيم محمود - مستثمر</h4>
+            </div>
+            <div class="test-card">
+                <p>"مكتب يجمع بين الرقي في التعامل والقوة القانونية في التنفيذ. فخور جداً بوجود هذا الكيان في أسوان."</p>
+                <h4>د. سارة عثمان - سيدة أعمال</h4>
             </div>
         </div>
     </section>
 
     <section id="services">
-        <h2 class="title-gold">خدماتنا الشاملة بالتفصيل</h2>
-        
-        <div class="services-detailed-grid">
-            <div class="detailed-card">
+        <h2 class="section-title gold-text">خدماتنا القانونية والمالية</h2>
+        <div class="services-grid">
+            <div class="s-card">
                 <h3>الاستشارات القانونية</h3>
                 <ul>
-                    <li>صياغة ومراجعة العقود والاتفاقيات الدولية والمحلية.</li>
-                    <li>إدارة المنازعات القانونية والتحكيم.</li>
-                    <li>حماية الملكية الفكرية والعلامات التجارية.</li>
-                    <li>الامتثال القانوني والتنظيمي للمؤسسات.</li>
-                    <li>القضايا العمالية وإدارة الموارد البشرية.</li>
-                    <li>تأسيس الشركات والتوسعات الدولية.</li>
+                    <li>صياغة ومراجعة كافة العقود والاتفاقيات.</li>
+                    <li>إدارة المنازعات القانونية وحماية الملكية الفكرية.</li>
+                    <li>تأسيس الشركات والتوسعات الدولية والامتثال.</li>
                 </ul>
             </div>
-
-            <div class="detailed-card">
+            <div class="s-card">
                 <h3>الحلول المالية والتحصيل</h3>
                 <ul>
-                    <li>دراسات جدوى مالية وقانونية متكاملة للمشروعات.</li>
-                    <li>تنظيم الملفات الضريبية والمحاسبية وإعداد التقارير.</li>
-                    <li>خدمات التحصيل الاحترافي للشركات، البنوك، والجهات التمويلية.</li>
-                    <li>إدارة الديون المتعثرة والتسويات المالية الحاسمة.</li>
+                    <li>دراسات جدوى مالية وقانونية للمشروعات.</li>
+                    <li>تنظيم الملفات الضريبية والمحاسبية.</li>
+                    <li>خدمات التحصيل للبنوك وإدارة الديون المتعثرة.</li>
                 </ul>
             </div>
-
-            <div class="detailed-card" style="background: linear-gradient(135deg, #151515, #0a0a0a);">
-                <h3 class="gold-text">الذكاء الاصطناعي القانوني</h3>
-                <p style="color: #ccc; margin-bottom: 15px; font-style: italic;">مستقبل القانون بين يديك</p>
+            <div class="s-card">
+                <h3>خدمات دبي (الإمارات)</h3>
                 <ul>
-                    <li>إعداد عقود تنفيذية ذكية Smart Contracts وفق أحدث النماذج.</li>
-                    <li>تحليل المستندات القانونية الضخمة باستخدام أدوات LegalTech.</li>
-                    <li>خدمات الامتثال الذكي وتقارير المخاطر التنفيذية.</li>
+                    <li>تأسيس الشركات وفتح الحسابات البنكية.</li>
+                    <li>خدمات الإقامة الذهبية والتأشيرات وتصديق الأوراق.</li>
+                    <li>العلامات التجارية والترجمة القانونية المعتمدة.</li>
                 </ul>
             </div>
-
-            <div class="detailed-card">
-                <h3>خدمات دولة الإمارات (دبي)</h3>
+            <div class="s-card">
+                <h3>الذكاء الاصطناعي القانوني</h3>
                 <ul>
-                    <li>خدمات تأسيس الشركات بأنواعها في دبي والمناطق الحرة.</li>
-                    <li>إجراءات فتح حساب بنكي للأعمال بسلاسة.</li>
-                    <li>خدمات الإقامة الذهبية للمستثمرين والكفاءات.</li>
-                    <li>تصديق الأوراق والترجمة القانونية المعتمدة.</li>
-                </ul>
-            </div>
-
-            <div class="detailed-card">
-                <h3>العلاقات الحكومية (GR)</h3>
-                <ul>
-                    <li>تنسيق العلاقات الرسمية مع الجهات التنظيمية والوزارات.</li>
-                    <li>تسهيل إجراءات التراخيص وتوسيع نطاق الأعمال الحكومية.</li>
-                    <li>دعم مشروعات الشراكة بين القطاعين العام والخاص.</li>
+                    <li>إعداد العقود الذكية (Smart Contracts).</li>
+                    <li>تحليل المستندات القانونية بأحدث أدوات LegalTech.</li>
+                    <li>تقارير تنفيذية ذكية للمخاطر والامتثال.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="partners" id="partners">
-        <h2 class="title-gold">شركاء النجاح</h2>
-        <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">نعتز بثقة كبرى المؤسسات والكيانات التي اخترتنا لنكون حليفهم القانوني والمالي.</p>
-        <div class="partners-logos">
-             <span>Elite Partners</span> | <span>LegalTech Global</span> | <span>Dubai Business Hub</span> | <span>Aswan Projects</span>
+    <section class="partners">
+        <h2 class="section-title" style="font-size: 2rem;">شركاء النجاح</h2>
+        <div class="partners-box">
+            <img src="Screenshot 2026-03-25 104057.png" alt="شريك 1">
+            <img src="Screenshot 2026-03-25 104115.png" alt="شريك 2">
+            <span style="font-size: 1.5rem; color: #444;">Elite Finance Group</span>
+            <span style="font-size: 1.5rem; color: #444;">Aswan Business Council</span>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <div class="contact-details">
-            <h3>تواصل مع التيم</h3>
-            
-            <div class="contact-item">
-                <span class="icon">📞</span>
-                <div>
-                    <h5>الهاتف (اتصال مباشر/واتساب)</h5>
-                    <p class="gold-text">01116033380</p>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <span class="icon">📧</span>
-                <div>
-                    <h5>البريد الإلكتروني الرسمي</h5>
-                    <p>Elitelgroub.Law@gmail.com</p>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <span class="icon">📍</span>
-                <div>
-                    <h5>المقر الرئيسي - أسوان</h5>
-                    <p>كورنيش النيل - المبنى الإداري - بجوار مسجد الجامع - الدور الثالث مكتب 5</p>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <span class="icon">⏰</span>
-                <div>
-                    <h5>مواعيد العمل الرسمية</h5>
-                    <p>من السبت إلى الخميس: <span class="gold-text">12:00PM - 8:00PM</span></p>
-                </div>
-            </div>
-
-            <a href="https://www.facebook.com/share/1Dac5aVLou/?mibextid=wwXIfr" target="_blank" class="btn-gold" style="background: #3b5998; color: white;">تابعنا على الفيس بوك</a>
-        </div>
-
-        <div class="location-map gold-border">
-            <div class="map-placeholder serif" style="font-size: 1.2rem;">
-                الموقع الدقيق على الخريطة (قريباً)
-            </div>
-        </div>
+    <section class="cta" id="contact">
+        <h2 class="gold-text" style="font-size: 3rem;">ابدأ حماية حقوقك اليوم</h2>
+        <p style="margin-bottom: 30px;">نحن هنا لنستمع إليك ونقدم لك الحل القانوني الأمثل.</p>
+        <a href="tel:01116033380" class="btn-gold">اتصل بنا الآن: 01116033380</a>
     </section>
 
     <footer>
-        <div class="footer-logo">
-             <img src="data:image/png;base64," alt="Elite Logo">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo"><img src="image_7df47a.png" alt="Logo"></div>
+                <p>المقر: أسوان - كورنيش النيل - المبنى الإداري بجوار مسجد الجامع - الدور الثالث مكتب 5</p>
+            </div>
+            <div>
+                <h3 class="gold-text">مواعيد العمل</h3>
+                <p>من السبت إلى الخميس</p>
+                <p>12:00 PM - 8:00 PM</p>
+            </div>
+            <div>
+                <h3 class="gold-text">تواصل مباشر</h3>
+                <p>Elitelgroub.Law@gmail.com</p>
+                <p>01116033380</p>
+            </div>
         </div>
-        <p>&copy; 2026 Hossny & Co. جميع الحقوق محفوظة لسيادة اللواء والمكتب.</p>
-        <p style="color: #444; font-size: 0.8rem; margin-top: 10px;">صُمم بوقار ليناسبكم بواسطة Fateen Digital.</p>
+        <div style="text-align: center; margin-top: 50px; border-top: 1px solid #222; padding-top: 20px; font-size: 0.8rem; color: #444;">
+            جميع الحقوق محفوظة &copy; 2026 Elite Law Group. صُمم بوقار ليناسبكم.
+        </div>
     </footer>
 
 </body>
