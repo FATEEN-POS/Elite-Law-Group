@@ -285,7 +285,31 @@
             font-size:1.25rem;color:var(--gold-pale);
             margin-bottom:12px;font-weight:600;letter-spacing:.5px;
         }
-        .service-card p{font-size:.86rem;color:var(--muted);line-height:1.9;font-weight:300;}
+        .service-list{
+            list-style:none;
+            display:flex;
+            flex-direction:column;
+            gap:8px;
+            margin:0;
+            padding:0;
+            text-align:right;
+        }
+        .service-list li{
+            font-size:.86rem;
+            color:var(--muted);
+            line-height:1.9;
+            font-weight:300;
+            position:relative;
+            padding-right:16px;
+        }
+        .service-list li::before{
+            content:'▪';
+            position:absolute;
+            right:0;
+            top:0;
+            color:var(--gold-bright);
+            font-size:.9rem;
+        }
 
         /* ══ ABOUT / CEO ══ */
         .about{
@@ -672,7 +696,7 @@
             مجموعة إيليت — أول شركة محاماه دولية في صعيد مصر
             <span class="eyebrow-line"></span>
         </div>
-        <h1>التميّز القانوني<em>في خدمتكم</em></h1>
+        <h1>اول شركة محاماه دولية فى صعيد مصر</h1>
         <div class="hero-rule"></div>
         <p>نقدم حلولاً قانونية ومالية مبتكرة لحماية مصالحكم وتحقيق أهدافكم<br>بأعلى معايير المهنية والاحترافية في أسوان ومصر.</p>
         <div class="hero-btns">
@@ -712,55 +736,50 @@
 
 <!-- SERVICES -->
 <section class="services" id="services">
-    <div class="sec-tag">تخصصاتنا</div>
-    <h2 class="sec-h">مجالات الاختصاص</h2>
+    <div class="sec-tag">خدماتنا</div>
+    <h2 class="sec-h">خدماتنا</h2>
     <p class="sec-sub">نغطي أوسع نطاق من المجالات القانونية والمالية بفريق من المستشارين ذوي الخبرة العميقة.</p>
     <div class="gold-rule"><span></span></div>
     <div class="services-grid">
         <div class="service-card">
             <div class="s-icon">⚖️</div>
-            <h3>القانون الشركات</h3>
-            <p>تأسيس الشركات، صياغة العقود التجارية، وحل النزاعات بين الشركاء باحترافية تامة.</p>
+            <h3>الاستشارات القانونية الشاملة</h3>
+            <ul class="service-list">
+                <li>صياغة ومراجعة العقود والاتفاقيات.</li>
+                <li>إدارة المنازعات القانونية.</li>
+                <li>حماية الملكية الفكرية.</li>
+                <li>الامتثال القانوني والتنظيمي.</li>
+                <li>القضايا العمالية وإدارة الموارد البشرية.</li>
+                <li>تأسيس الشركات والتوسعات الدولية.</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="s-icon">💰</div>
+            <h3>الحلول المالية والتحصيل</h3>
+            <ul class="service-list">
+                <li>دراسات جدوى مالية وقانونية للمشروعات.</li>
+                <li>تنظيم الملفات الضريبية والمحاسبية.</li>
+                <li>خدمات التحصيل للشركات، البنوك، والجهات التمويلية.</li>
+                <li>إدارة الديون المتعثرة والتسويات المالية.</li>
+            </ul>
         </div>
         <div class="service-card">
             <div class="s-icon">🏛️</div>
-            <h3>القضايا المدنية</h3>
-            <p>تمثيل قانوني متكامل في كافة المنازعات المدنية والمطالبات المالية أمام المحاكم.</p>
+            <h3>خدمات العلاقات الحكومية (GR)</h3>
+            <ul class="service-list">
+                <li>تنسيق العلاقات الرسمية مع الجهات التنظيمية والحكومية.</li>
+                <li>تسهيل إجراءات التراخيص وتوسيع نطاق الأعمال.</li>
+                <li>دعم مشروعات الشراكة بين القطاعين العام والخاص.</li>
+            </ul>
         </div>
         <div class="service-card">
-            <div class="s-icon">🤝</div>
-            <h3>التحكيم والوساطة</h3>
-            <p>حل النزاعات بطرق بديلة تتسم بالسرعة والسرية التامة وفاعلية عالية.</p>
-        </div>
-        <div class="service-card">
-            <div class="s-icon">💼</div>
-            <h3>الاستشارات المالية</h3>
-            <p>تحليل مالي دقيق، تخطيط استثماري، ومرافقة كاملة في قرارات الأعمال الكبرى.</p>
-        </div>
-        <div class="service-card">
-            <div class="s-icon">📋</div>
-            <h3>العقود والتوثيق</h3>
-            <p>مراجعة وصياغة كافة أنواع العقود وضمان سلامتها القانونية وحماية جميع الأطراف.</p>
-        </div>
-        <div class="service-card">
-            <div class="s-icon">🌐</div>
-            <h3>الاستثمار الأجنبي</h3>
-            <p>مرافقة المستثمرين في كل مراحل الدخول إلى السوق المصري وفق الأطر القانونية.</p>
-        </div>
-        <div class="service-card">
-            <div class="s-icon">🏢</div>
-            <h3>قانون الأعمال الدولي</h3>
-            <p>استشارات متخصصة في القانون الدولي للأعمال وحل النزاعات العابرة للحدود.</p>
-        </div>
-        <div class="service-card">
-            <div class="s-icon">🛡️</div>
-            <h3>الملكية الفكرية</h3>
-            <p>حماية براءات الاختراع والعلامات التجارية وحقوق الملكية الفكرية للمؤسسات.</p>
-        </div>
-        <div class="service-card">
-            <div class="s-icon">🔍</div>
-            <h3>الامتثال والحوكمة</h3>
-            <p>مساعدة الشركات في الامتثال للوائح القانونية وتطبيق معايير الحوكمة الرشيدة.</p>
+            <div class="s-icon">🤖</div>
+            <h3>الذكاء الاصطناعي القانوني والعقود الذكية</h3>
+            <ul class="service-list">
+                <li>إعداد عقود تنفيذية ذكية وفق أحدث نماذج الذكاء الاصطناعي القانوني.</li>
+                <li>تحليل مستندات قانونية باستخدام أدوات LegalTech.</li>
+                <li>خدمات الامتثال الذكي والتقارير التنبؤية للمخاطر القانونية.</li>
+            </ul>
         </div>
     </div>
 </section>
