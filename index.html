@@ -1222,6 +1222,11 @@
     document.querySelectorAll('nav a').forEach(a=>
         a.addEventListener('click',()=>document.getElementById('N').classList.remove('open'))
     );
+    const conferenceCaption = [...document.querySelectorAll('.gallery-caption')].find(el=>el.textContent.includes('المؤتمر العربي للدراسات الاستراتيجية'));
+    if(conferenceCaption){
+        const conferenceImage = conferenceCaption.closest('.gallery-item')?.querySelector('img');
+        if(conferenceImage) conferenceImage.src = 'photo_2026-03-28_03-10-38.jpg';
+    }
     function submitForm(){
         const name = document.querySelector('input[type=text]').value.trim();
         const phone = document.querySelector('input[type=tel]').value.trim();
