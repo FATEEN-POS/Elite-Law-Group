@@ -606,6 +606,92 @@
             text-decoration:none;letter-spacing:1px;transition:color .2s;
         }
         .footer-links a:hover{color:var(--gold);}
+        .social-highlight{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+            padding:14px 18px;
+            border:1px solid var(--border-hi);
+            background:rgba(201,148,58,.08);
+            box-shadow:0 0 28px rgba(201,148,58,.16);
+        }
+        .social-title{
+            color:var(--gold-bright);
+            font-size:.78rem;
+            letter-spacing:2px;
+            font-weight:700;
+        }
+        .social-links{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+        .social-icon-btn{
+            width:46px;
+            height:46px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+            border:1px solid var(--border);
+            background:rgba(255,255,255,.03);
+            border-radius:50%;
+            color:var(--white);
+            font-weight:700;
+            font-size:1rem;
+            transition:all .25s;
+        }
+        .social-icon-btn svg{
+            width:20px;
+            height:20px;
+            fill:currentColor;
+            display:block;
+        }
+        .social-icon-btn:hover{
+            color:var(--gold-pale);
+            border-color:var(--gold-bright);
+            transform:translateY(-2px);
+            box-shadow:0 8px 22px rgba(201,148,58,.2);
+        }
+        .social-icon-btn.wa{
+            background:rgba(37,211,102,.12);
+            border-color:rgba(37,211,102,.5);
+        }
+        .social-icon-btn.fb{
+            background:rgba(24,119,242,.12);
+            border-color:rgba(24,119,242,.5);
+        }
+        .social-icon-btn.in{
+            background:rgba(10,102,194,.12);
+            border-color:rgba(10,102,194,.5);
+        }
+        .social-icon-btn.mail{
+            background:rgba(201,148,58,.14);
+            border-color:rgba(201,148,58,.55);
+        }
+        .header-social-floating{
+            position:fixed;
+            top:86px;
+            left:12px;
+            z-index:1101;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            padding:10px 8px;
+            border:1px solid var(--border-hi);
+            background:rgba(0,0,0,.75);
+            backdrop-filter:blur(8px);
+            box-shadow:0 0 30px rgba(0,0,0,.35);
+            animation:floatY 2.8s ease-in-out infinite;
+        }
+        @keyframes floatY{
+            0%{transform:translateY(0)}
+            50%{transform:translateY(-6px)}
+            100%{transform:translateY(0)}
+        }
 
         /* ══ RESPONSIVE ══ */
         @media(max-width:1024px){
@@ -633,8 +719,23 @@
             .gallery-item.wide{grid-column:span 1;}
             .partners-wrap{grid-template-columns:1fr;text-align:center;}
             .partners-cities{grid-template-columns:1fr 1fr;}
+            .social-highlight{width:100%;}
         }
         @media(max-width:768px){
+            .header-social-floating{
+                top:72px;
+                left:8px;
+                gap:7px;
+                padding:8px 6px;
+            }
+            .social-icon-btn{
+                width:40px;
+                height:40px;
+            }
+            .social-icon-btn svg{
+                width:18px;
+                height:18px;
+            }
             nav{
                 display:none;position:absolute;top:74px;left:0;right:0;
                 background:rgba(0,0,0,.99);flex-direction:column;
@@ -679,6 +780,20 @@
         <span></span><span></span><span></span>
     </div>
 </header>
+<div class="header-social-floating" aria-label="روابط التواصل السريعة">
+    <a class="social-icon-btn wa" href="https://wa.me/201116033380" target="_blank" rel="noopener noreferrer" aria-label="واتساب" title="واتساب">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.135.671C3.79.671.26 4.2.26 8.546c0 1.393.364 2.752 1.054 3.95L.239 15.999l3.596-1.049a7.9 7.9 0 0 0 4.3 1.26h.003a7.867 7.867 0 0 0 5.463-13.884zm-5.466 12.55h-.003a6.57 6.57 0 0 1-3.35-.92l-.24-.142-2.135.623.57-2.082-.156-.248a6.57 6.57 0 0 1-1.013-3.562c0-3.63 2.952-6.58 6.58-6.58a6.535 6.535 0 0 1 4.648 1.928 6.533 6.533 0 0 1 1.924 4.652c-.001 3.63-2.955 6.58-6.585 6.58zm3.61-4.92c-.197-.1-1.162-.574-1.342-.64-.18-.067-.31-.1-.44.1-.13.197-.507.64-.622.77-.114.13-.23.147-.427.05-.197-.1-.833-.307-1.587-.98-.586-.523-.982-1.17-1.097-1.367-.114-.197-.012-.304.086-.402.09-.09.197-.23.295-.345.098-.114.13-.197.197-.328.066-.13.033-.246-.017-.345-.05-.098-.44-1.06-.604-1.454-.16-.385-.323-.332-.44-.338-.114-.007-.246-.007-.377-.007-.13 0-.344.05-.525.246-.18.197-.688.672-.688 1.64 0 .967.705 1.903.803 2.034.098.13 1.39 2.122 3.366 2.976.47.203.838.324 1.124.417.472.152.901.13 1.24.08.378-.057 1.162-.475 1.326-.934.164-.46.164-.853.115-.934-.05-.082-.18-.13-.377-.23z"/></svg>
+    </a>
+    <a class="social-icon-btn fb" href="https://www.facebook.com/share/1B8ENC9a87/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك" title="فيسبوك">
+        <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+    <a class="social-icon-btn in" href="https://www.linkedin.com/in/مجموعة-ايليت-للاستشارات-القانونية-والمالية-4506883ba" target="_blank" rel="noopener noreferrer" aria-label="لينكدإن" title="لينكدإن">
+        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.27 108 0 83.5 0 53.4A53.79 53.79 0 0153.84 0c29.7 0 53.74 24.5 53.74 53.4 0 30.1-24 54.6-53.74 54.6zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.7-48.3 87.88-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+    </a>
+    <a class="social-icon-btn mail" href="mailto:info@elitelawgroup.com" aria-label="البريد الإلكتروني" title="البريد الإلكتروني">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.24l-8 5-8-5V6l8 5 8-5z"/></svg>
+    </a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -1025,13 +1140,6 @@
                         <span>السبت — الخميس<br>12:00 PM — 8:00 PM</span>
                     </div>
                 </div>
-                <div class="c-item">
-                    <div class="c-icon">🌐</div>
-                    <div class="c-text">
-                        <strong>الموقع الإلكتروني</strong>
-                        <span>elitelawgroup.mystrikingly.com</span>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="c-form">
@@ -1085,6 +1193,15 @@
             <span class="logo-sub">للاستشارات القانونية والمالية</span>
         </div>
     </div>
+    <div class="social-highlight">
+        <div class="social-title">السوشيال ميديا</div>
+        <div class="social-links">
+            <a class="social-icon-btn wa" href="https://wa.me/201116033380" target="_blank" rel="noopener noreferrer" aria-label="واتساب" title="واتساب"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.135.671C3.79.671.26 4.2.26 8.546c0 1.393.364 2.752 1.054 3.95L.239 15.999l3.596-1.049a7.9 7.9 0 0 0 4.3 1.26h.003a7.867 7.867 0 0 0 5.463-13.884zm-5.466 12.55h-.003a6.57 6.57 0 0 1-3.35-.92l-.24-.142-2.135.623.57-2.082-.156-.248a6.57 6.57 0 0 1-1.013-3.562c0-3.63 2.952-6.58 6.58-6.58a6.535 6.535 0 0 1 4.648 1.928 6.533 6.533 0 0 1 1.924 4.652c-.001 3.63-2.955 6.58-6.585 6.58zm3.61-4.92c-.197-.1-1.162-.574-1.342-.64-.18-.067-.31-.1-.44.1-.13.197-.507.64-.622.77-.114.13-.23.147-.427.05-.197-.1-.833-.307-1.587-.98-.586-.523-.982-1.17-1.097-1.367-.114-.197-.012-.304.086-.402.09-.09.197-.23.295-.345.098-.114.13-.197.197-.328.066-.13.033-.246-.017-.345-.05-.098-.44-1.06-.604-1.454-.16-.385-.323-.332-.44-.338-.114-.007-.246-.007-.377-.007-.13 0-.344.05-.525.246-.18.197-.688.672-.688 1.64 0 .967.705 1.903.803 2.034.098.13 1.39 2.122 3.366 2.976.47.203.838.324 1.124.417.472.152.901.13 1.24.08.378-.057 1.162-.475 1.326-.934.164-.46.164-.853.115-.934-.05-.082-.18-.13-.377-.23z"/></svg></a>
+            <a class="social-icon-btn fb" href="https://www.facebook.com/share/1B8ENC9a87/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك" title="فيسبوك"><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+            <a class="social-icon-btn in" href="https://www.linkedin.com/in/مجموعة-ايليت-للاستشارات-القانونية-والمالية-4506883ba" target="_blank" rel="noopener noreferrer" aria-label="لينكدإن" title="لينكدإن"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.27 108 0 83.5 0 53.4A53.79 53.79 0 0153.84 0c29.7 0 53.74 24.5 53.74 53.4 0 30.1-24 54.6-53.74 54.6zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.7-48.3 87.88-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg></a>
+            <a class="social-icon-btn mail" href="mailto:info@elitelawgroup.com" aria-label="البريد الإلكتروني" title="البريد الإلكتروني"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.24l-8 5-8-5V6l8 5 8-5z"/></svg></a>
+        </div>
+    </div>
     <p class="footer-copy">جميع الحقوق محفوظة &copy; 2024 Elite Group for Legal & Finance Consultancy</p>
     <div class="footer-links">
         <a href="#home">الرئيسية</a>
@@ -1106,13 +1223,24 @@
         a.addEventListener('click',()=>document.getElementById('N').classList.remove('open'))
     );
     function submitForm(){
-        const name = document.querySelector('input[type=text]').value;
-        const phone = document.querySelector('input[type=tel]').value;
+        const name = document.querySelector('input[type=text]').value.trim();
+        const phone = document.querySelector('input[type=tel]').value.trim();
+        const email = document.querySelector('input[type=email]').value.trim();
+        const consultationType = document.querySelector('.c-form select').value.trim();
+        const details = document.querySelector('.c-form textarea').value.trim();
         if(!name || !phone){
             alert('الرجاء ملء الاسم ورقم الهاتف على الأقل');
             return;
         }
-        alert('شكراً ' + name + '! سيتواصل معك فريقنا قريباً على رقم: ' + phone + '\nللتواصل المباشر: 01116033380');
+        const whatsappMessage =
+`طلب حجز استشارة جديد
+الاسم الكامل: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email || 'غير مذكور'}
+نوع الاستشارة: ${consultationType || 'غير محدد'}
+تفاصيل الاستشارة: ${details || 'غير مذكورة'}`;
+        const whatsappUrl = `https://wa.me/201116033380?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappUrl, '_blank');
     }
     // Intersection Observer for fade-in
     const io = new IntersectionObserver(entries=>{
